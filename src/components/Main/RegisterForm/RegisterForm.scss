@@ -1,0 +1,223 @@
+@import "../../../styles/headings";
+@import "../../../styles/paragraphs";
+@import "../../../styles/colors";
+@import "../../../styles/reset";
+@import "../../../styles/breakpoints";
+
+%input {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  margin-top: 7px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font: inherit;
+}
+
+.register-form__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: {
+    top: 75px;
+    bottom: 80px;
+  }
+
+  @include for-tablet-up {
+    padding: {
+      top: 110px;
+      bottom: 120px;
+      left: 150px;
+      right: 150px;
+    }
+  }
+
+  @include for-desktop-up {
+    padding: 150px 280px;
+    padding-bottom: 165px;
+  }
+
+  .title {
+    @include heading-one-mobile;
+
+    @include for-tablet-up {
+      @include heading-one-tablet;
+    }
+    @include for-desktop-up {
+      @include heading-one-desktop;
+      margin: {
+        left: -100px;
+        right: -100px;
+      }
+    }
+    margin-bottom: 18px;
+  }
+
+  .description {
+    @include paragraph-one;
+    text-align: center;
+    margin-bottom: 24px;
+    padding: {
+      left: 10px;
+      right: 10px;
+    }
+
+    @include for-desktop-up {
+      padding: 0px;
+      margin-bottom: 27px;
+    }
+  }
+
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      position: relative;
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+
+    .input {
+      @extend %input;
+      border: 1px solid $border-input;
+      outline: none;
+
+      &:active,
+      &:focus {
+        border: 1px solid $border-input-focus;
+        box-shadow: 0px 0px 0px 3px $border-input-shadow;
+      }
+
+      &::placeholder {
+        font-size: 15px;
+      }
+    }
+
+    .phone {
+      margin-bottom: 50px;
+      .phone__description {
+        font-size: 12px;
+        position: absolute;
+        bottom: -30px;
+      }
+    }
+
+    .position {
+      margin-bottom: 10px;
+      label {
+        display: flex;
+        align-items: center;
+      }
+
+      input {
+        @extend %visually-hidden;
+
+        &:checked + .radio-picker {
+          border: 5px solid $secondary;
+        }
+
+        &:focus + .radio-picker {
+          box-shadow: 0px 0px 0px 2px $border-input-shadow;
+        }
+      }
+
+      .radio-picker {
+        content: "";
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        border: 1px solid $border-radio;
+        border-radius: 50%;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+
+      label {
+        margin-bottom: 6px;
+      }
+    }
+
+    .file-upload {
+      margin-bottom: 40px;
+      input[type="file"] {
+        @extend %visually-hidden;
+
+        &:focus + .file-upload__button {
+          border: 1px solid $border-input-focus;
+          box-shadow: 0px 0px 0px 2px $border-input-shadow;
+        }
+      }
+
+      .file-upload__wrapper {
+        display: flex;
+      }
+
+      .visual {
+        @extend %input;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 0 13px;
+        height: 40px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      .file-upload__button {
+        align-self: stretch;
+        padding: 0 20px;
+        margin-top: -1px;
+        margin-bottom: -1px;
+        background-color: $background-button;
+        border: 1px solid $border-input;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 5px;
+        outline: 1px solid $border-input-shadow;
+        cursor: pointer;
+      }
+
+      .input__error .file-upload__button {
+        border: 1px solid $border-input-error;
+      }
+    }
+
+    .error {
+      position: absolute;
+      bottom: -22px;
+      color: $error;
+      font-size: 12px;
+    }
+
+    .input__error {
+      border: 1px solid $border-input-error !important;
+      box-shadow: 0px 0px 0px 3px $border-input-error-shadow;
+
+      &:focus {
+        border: 1px solid $border-input-error;
+        box-shadow: none;
+      }
+    }
+
+    button {
+      align-self: center;
+    }
+  }
+
+  :invalid {
+    box-shadow: none;
+  }
+
+  :-moz-submit-invalid {
+    box-shadow: none;
+  }
+
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,25 @@
+$weight: 400;
+
+@mixin heading-one-desktop {
+  font-size: 50px;
+  font-weight: $weight;
+  line-height: 54px;
+}
+
+@mixin heading-one-tablet {
+  font-size: 40px;
+  font-weight: $weight;
+  line-height: 44px;
+}
+
+@mixin heading-one-mobile {
+  font-size: 30px;
+  font-weight: $weight;
+  line-height: 34px;
+}
+
+@mixin heading-two {
+  font-size: 24px;
+  font-weight: $weight;
+  line-height: 29px;
+}

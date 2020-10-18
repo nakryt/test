@@ -1,0 +1,58 @@
+@import '../../../styles/colors';
+@import '../../../styles/headings';
+@import '../../../styles/paragraphs';
+@import '../../../styles/breakpoints';
+
+.users__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: {
+    top: 75px;
+    bottom: 75px;
+  }
+  background-color: $background-two;
+
+  @include for-tablet-up {
+    padding: {
+      top: 110px;
+      bottom: 120px;
+    }
+  }
+  @include for-desktop-up {
+    padding: {
+      top: 150px;
+      bottom: 160px;
+    }
+  }
+
+  .title {
+    @include heading-one-mobile;
+    margin-bottom: 10px;
+
+    @include for-tablet-up {
+      @include heading-one-tablet;
+      margin-bottom: 20px;
+    }
+    @include for-desktop-up {
+      @include heading-one-desktop;
+      margin-bottom: 15px;
+    }
+    text-align: center;
+  }
+
+  .description {
+    @include paragraph-one;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include for-tablet-up {
+      margin-bottom: 75px;
+    }
+  }
+
+  button {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}

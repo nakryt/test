@@ -1,0 +1,63 @@
+@import '../../../styles/colors';
+@import '../../../styles/reset';
+@import '../../../styles/paragraphs';
+@import '../../../styles/breakpoints';
+
+.mobile-navigation {
+  position: absolute;
+  width: 290px;
+  background-color: #fff;
+  z-index: 200;
+
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid #e1e1e1;
+    z-index: 999;
+
+    @include for-tablet-up {
+      height: 60px;
+    }
+  }
+
+  ul {
+    @extend %reset;
+    @include paragraph-one;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 15px;
+  }
+
+  li {
+    &:nth-child(5n) {
+      padding-bottom: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #e1e1e1;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  .navigation__item {
+    margin: 10px 0;
+  }
+
+  a:hover {
+    color: $primary;
+  }
+
+  .active-link {
+    color: $secondary;
+  }
+
+  .horizontal-line {
+    width: 100%;
+    height: 1px;
+    background-color: #e1e1e1;
+    border: none;
+  }
+}

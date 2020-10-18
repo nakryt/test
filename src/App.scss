@@ -1,0 +1,51 @@
+@import "./styles/breakpoints";
+
+.app {
+  max-width: 1170px;
+  margin: 0 auto;
+
+  main {
+    width: 100%;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+  max-height: 100vh;
+}
+
+.overflow-inherit {
+  overflow: inherit;
+}
+
+.container {
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+
+  @include for-tablet-up {
+    padding: {
+      left: 30px;
+      right: 30px;
+    }
+  }
+}
+
+.menu-enter {
+  opacity: 0;
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+.menu-exit {
+  opacity: 1;
+}
+
+.menu-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}

@@ -1,0 +1,61 @@
+@import '../../../styles/breakpoints';
+
+.modal {
+  .modal-dialog {
+    width: 300px;
+    margin: 0 auto;
+    @include for-tablet-up {
+      width: 395px;
+    }
+    @include for-desktop-up {
+      margin-top: 28px;
+    }
+  }
+
+  .modal-header {
+    padding: {
+      top: 10px;
+      bottom: 10px;
+      right: 15px;
+    }
+    @include for-desktop-up {
+      padding-bottom: 15px;
+    }
+
+    .close {
+      padding-top: 23px;
+      font-weight: 900;
+    }
+  }
+
+  .modal-content {
+    margin-top: -14px;
+
+    @include for-desktop-up {
+      height: 190px;
+    }
+
+    .modal-body {
+      text-align: center;
+      @include for-tablet-up {
+        flex: 0;
+        padding-bottom: 16px;
+        text-align: left;
+      }
+    }
+
+    .modal-footer {
+      padding: 0.5rem 0.75rem;
+      @include for-desktop-up {
+        padding: 0.75rem;
+      }
+      button {
+        padding: 7px 19px;
+        margin: -2px;
+        @include for-desktop-up {
+          margin: 4px;
+        }
+      }
+    }
+  }
+}

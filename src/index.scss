@@ -1,0 +1,35 @@
+@import "./styles/reset";
+
+html,
+body,
+ul,
+ol,
+li,
+p {
+  @extend %reset;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    @extend %reset;
+    text-align: center;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}

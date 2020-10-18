@@ -1,0 +1,96 @@
+@import '../../../styles/reset';
+@import '../../../styles/headings';
+@import '../../../styles/paragraphs';
+@import '../../../styles/breakpoints';
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: {
+    top: 69px;
+    bottom: 75px;
+  }
+  background: {
+    image: url('../../../assets/banner-small.webp');
+    image: image-set(
+      url('../../../assets/banner-small.webp') 1x,
+      url('../../../assets/banner-medium.webp') 2x,
+      url('../../../assets/banner-large.webp') 3x
+    );
+    size: 190%;
+    position-x: center;
+    repeat: no-repeat;
+  }
+  @include for-tablet-up {
+    padding: {
+      top: 58px;
+      bottom: 65px;
+    }
+    align-items: flex-start;
+    background: {
+      image: url('../../../assets/banner-medium.webp');
+      image: image-set(
+        url('../../../assets/banner-medium.webp') 1x,
+        url('../../../assets/banner-large.webp') 2x,
+        url('../../../assets/banner-xlarge.webp') 3x
+      );
+      size: 135%;
+      position-x: left;
+    }
+  }
+  @include for-desktop-up {
+    padding: {
+      top: 107px;
+      bottom: 114px;
+    }
+    background: {
+      image: url('../../../assets/banner-large.webp');
+      image: image-set(
+        url('../../../assets/banner-large.webp') 1x,
+        url('../../../assets/banner-xlarge.webp') 2x
+      );
+      size: cover;
+      position-x: center;
+    }
+  }
+
+  .title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    @include heading-one-mobile;
+    @include for-tablet-up {
+      @include heading-one-tablet;
+      text-align: left;
+      width: 60%;
+      margin-bottom: 30px;
+    }
+    @include for-desktop-up {
+      @include heading-one-desktop;
+      margin-bottom: 25px;
+    }
+  }
+  .description {
+    @include paragraph-one;
+    color: #fff;
+    margin-bottom: 25px;
+    text-align: center;
+    @include for-tablet-up {
+      width: 65%;
+      margin-bottom: 34px;
+      text-align: left;
+    }
+    @include for-desktop-up {
+      width: 55%;
+    }
+
+    .description--laptop-up {
+      display: none;
+      @include for-tablet-up {
+        display: inline;
+      }
+    }
+  }
+}
